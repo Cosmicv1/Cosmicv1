@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Flying Dots</title>
+  <title>CosmicV1</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
   <style>
     html, body {
       margin: 0;
@@ -16,9 +17,22 @@
     canvas {
       display: block;
     }
+
+    .title {
+      position: absolute;
+      top: 30px;
+      width: 100%;
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 48px;
+      color: white;
+      z-index: 10;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
+  <div class="title">CosmicV1</div>
   <canvas id="dotCanvas"></canvas>
 
   <script>
@@ -61,7 +75,6 @@
         dot.x += dot.vx;
         dot.y += dot.vy;
 
-        // wrap around screen
         if (dot.x < 0) dot.x = width;
         if (dot.x > width) dot.x = 0;
         if (dot.y < 0) dot.y = height;
